@@ -18,7 +18,7 @@
     <nav>
       <div class="logo">
         <i class="bx bx-menu menu-icon"></i>
-        <span class="logo-name">Medi-Track</span>
+        <span class="logo-name">Dashboard</span>
       </div>
       <div class="sidebar">
         <div class="logo">
@@ -69,6 +69,54 @@
       </div>
     </nav>
     <section class="overlay"></section>
+    <div class="Main">
+      <div class="titlemain">
+        <h1>List Of Shipments</h1>
+      </div>
+      <div class="container">
+        <div class="header">
+            <h1></h1>
+            <button class="add-btn" onclick="openForm()">Add</button>
+        </div>
+        <div class="main-display" id="mainDisplay">
+            <!-- Display area for added items -->
+        </div>
+    </div>
+</div>
+
+<!-- Popup Form -->
+<div class="form-popup" id="myForm">
+    <form class="form-container">
+        <button type="button" class="close-btn" onclick="closeForm()">×</button>
+        <h2>Add Item</h2>
+        <label for="customerName"><b>Customer Name</b></label>
+        <input type="text" placeholder="Enter Customer Name" id="customerName" required>
+        <label for="startAddress"><b>Starting Address</b></label>
+        <input type="text" placeholder="Enter Starting Address" id="startAddress" required>
+        <label for="deliveryAddress"><b>Delivery Address</b></label>
+        <input type="text" placeholder="Enter Delivery Address" id="deliveryAddress" required>
+        <label for="fragile"><b>Fragile</b></label>
+        <input type="checkbox" id="fragile">
+        <label for="payment"><b>Payment</b></label>
+        <input type="checkbox" id="payment">
+        <label for="receivedDate"><b>Package Received Date</b></label>
+        <input type="date" id="receivedDate" required>
+        <p><b>Estimated Delivery Date:</b> <span id="estimatedDate"></span></p>
+        <button type="button" class="btn-cancel" onclick="closeForm()">Close</button>
+        <button type="submit" class="btn-add" onclick="addItem(event)">Add</button>
+    </form>
+</div>
+
+<!-- Item Detail Popup -->
+<div class="item-popup" id="itemPopup">
+    <div class="item-container">
+        <button type="button" class="close-btn" onclick="closeItemPopup()">×</button>
+        <h2>Item Details</h2>
+        <div id="itemDetailsContent"></div>
+    </div>
+</div>
+
+    </div>
     <script src="js/dashboard.js"></script>
   </body>
 </html>
