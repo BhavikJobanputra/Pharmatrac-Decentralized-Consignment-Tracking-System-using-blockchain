@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Blockchain Secure Pharma Supply Chain</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #BBE9FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .signup-container {
+            background-color: #FFE9D0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .signup-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+        .signup-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .signup-container form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px 10px 10px 35px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        .form-group i {
+            position: absolute;
+            top: 60%;
+            transform: translateY(-50%);
+            color: #28a745; /* Green color */
+        }
+        .form-group .input-icon {
+            left: 10px;
+        }
+        .form-group .toggle-password {
+            right: 10px;
+            cursor: pointer;
+        }
+        .signup-container form button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .signup-container form button:hover {
+            background-color: #0056b3;
+        }
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="POST">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <i class="fas fa-user input-icon"></i>
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <i class="fas fa-envelope input-icon"></i>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number<span class="required">*</span></label>
+                <i class="fas fa-phone input-icon"></i>
+                <input type="tel" id="mobile" name="mobile" placeholder="Mobile Number" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('password')"></i>
+            </div>
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password</label>
+                <i class="fas fa-lock input-icon"></i>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+                <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('confirm_password')"></i>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+    <script>
+        function togglePasswordVisibility(id) {
+            const passwordInput = document.getElementById(id);
+            const toggleIcon = passwordInput.nextElementSibling;
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
+</body>
+</html>
