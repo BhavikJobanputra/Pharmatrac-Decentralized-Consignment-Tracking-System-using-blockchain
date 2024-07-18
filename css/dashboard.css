@@ -118,8 +118,10 @@ nav.open ~ .overlay {
 
 }
 .container {
-  max-width: 800px;
-  margin: 20px auto;
+  float: left;
+  width: 50%;
+  padding-left: 5%;
+  margin: 20px ;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
