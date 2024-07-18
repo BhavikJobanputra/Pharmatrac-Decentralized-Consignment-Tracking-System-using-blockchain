@@ -15,6 +15,18 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+.links li:hover {
+    border: white solid 1px;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 5px;
+
+    
+}
+.links li a:hover{
+    color: #000000;
+    
+}
 
 .logo {
     font-size: 24px;
