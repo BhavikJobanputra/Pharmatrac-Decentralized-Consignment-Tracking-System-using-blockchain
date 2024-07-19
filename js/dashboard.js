@@ -95,7 +95,30 @@ document.getElementById("receivedDate").addEventListener("change", function () {
   const estimatedDate = new Date(receivedDate);
   estimatedDate.setDate(receivedDate.getDate() + 30);
   document.getElementById("estimatedDate").innerText = estimatedDate.toISOString().split('T')[0];
+}); 
+document.getElementById('updateButton').addEventListener('click', function() {
+  document.getElementById('overlay').style.display = 'block';
+  document.getElementById('popupForm').style.display = 'block';
 });
+
+document.getElementById('overlay').addEventListener('click', function() {
+  document.getElementById('overlay').style.display = 'none';
+  document.getElementById('popupForm').style.display = 'none';
+});
+
+document.getElementById('confirmButton').addEventListener('click', function() {
+  const selectedStatus = document.querySelector('input[name="status"]:checked');
+  if (selectedStatus) {
+      const progress = selectedStatus.value;
+      document.getElementById('progressBarFill').style.width = progress + '%';
+      alert('Status confirmed: ' + selectedStatus.value + '%');
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('popupForm').style.display = 'none';
+  } else {
+      alert('Please select a status');
+  }
+});
+
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -104,10 +127,6 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-function addItem(event) {
-  event.preventDefault();
-  // Your addItem logic here
-}
 
 function closeItemPopup() {
   document.getElementById("itemPopup").style.display = "none";
