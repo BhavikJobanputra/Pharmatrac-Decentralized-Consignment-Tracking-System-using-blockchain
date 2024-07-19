@@ -194,6 +194,17 @@ nav.open ~ .overlay {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.stats{
+  float: right;
+  width: 50%;
+  padding-left: 5%;
+  margin: 20px ;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 
 .form-container {
   max-width: 400px;
@@ -311,4 +322,70 @@ nav.open ~ .overlay {
   border: none;
   font-size: 24px;
   cursor: pointer;
+}
+.progress-bar {
+  width: 80%;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.progress-bar-fill {
+  height: 20px;
+  width: 0;
+  background-color: #4caf50;
+  border-radius: 10px;
+  transition: width 0.5s ease-in-out;
+}
+
+.update-button {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-form {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.popup-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.confirm-button {
+  display: block;
+  margin-top: 20px;
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }

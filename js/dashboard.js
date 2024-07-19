@@ -96,3 +96,19 @@ document.getElementById("receivedDate").addEventListener("change", function () {
   estimatedDate.setDate(receivedDate.getDate() + 30);
   document.getElementById("estimatedDate").innerText = estimatedDate.toISOString().split('T')[0];
 });
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function addItem(event) {
+  event.preventDefault();
+  // Your addItem logic here
+}
+
+function closeItemPopup() {
+  document.getElementById("itemPopup").style.display = "none";
+}

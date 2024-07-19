@@ -112,18 +112,38 @@
         <div id="itemDetailsContent"></div>
     </div>
 </div>
-
+<!-- Progress Bar Section -->
 <div class="Main">
-  <div class="stats">
-    <div class="header">
-        <h1>Stats</h1>
-    </div>
-    <div class="main-display" id="mainDisplay">
-        <!-- Display area for added items -->
-    </div>
+  <div class="progress bar">
+      <div class="header">
+          <div class="container">
+              <h1>Progress Bar</h1>
+              <div class="progress-container">
+                  <div class="progress-bar">
+                      <div class="progress-bar-fill" id="progressBarFill"></div>
+                  </div>
+                  <button class="update-button" id="updateButton">Update</button>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 
-    </div>
+<!-- Popup Form for Updating Progress -->
+<div class="overlay" id="overlay"></div>
+<div class="popup-form" id="popupForm">
+  <label>
+      <input type="radio" name="status" value="0"> Package
+  </label>
+  <label>
+      <input type="radio" name="status" value="50"> Shipment
+  </label>
+  <label>
+      <input type="radio" name="status" value="100"> Delivered
+  </label>
+  <button class="confirm-button" id="confirmButton">Confirm</button>
+</div>
+
     <script src="js/dashboard.js"></script>
   </body>
 </html>
