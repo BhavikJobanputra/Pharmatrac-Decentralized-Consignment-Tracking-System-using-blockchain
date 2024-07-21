@@ -259,7 +259,6 @@ async function initContractInteraction() {
 // Add item functionality
 window.addItem = async function(event) {
     event.preventDefault();
-
     const customerName = document.getElementById("customerName").value;
     const startAddress = document.getElementById("startAddress").value;
     const deliveryAddress = document.getElementById("deliveryAddress").value;
@@ -275,7 +274,7 @@ window.addItem = async function(event) {
     try {
         const accounts = await window.web3.eth.getAccounts();
         const tx = await window.contract.methods.addItem(customerName, startAddress, deliveryAddress, fragile, payment, receivedDate)
-            .send({ from: accounts[0] });
+            .send({ from: accounts[0], gas: 3000000 });
 
         const itemId = (await window.contract.methods.itemCount().call()).toNumber();
         const item = await window.contract.methods.getItem(itemId).call();
@@ -308,7 +307,7 @@ window.addItem = async function(event) {
 
         closeForm();
     } catch (error) {
-        console.error("Error adding item:", error);
+        console.error("Error adding item:", error.message || error);
         alert("Failed to add item. Check console for details.");
     }
 };
@@ -323,7 +322,7 @@ window.updateProgressBar = async function() {
         try {
             const accounts = await window.web3.eth.getAccounts();
             const tx = await window.contract.methods.updateProgress(itemId, progressValue)
-                .send({ from: accounts[0] });
+                .send({ from: accounts[0], gas: 3000000 }); // Added gas limit
 
             // Update the progress bar in the UI
             const progressBar = document.getElementById(`progress-${itemId}`);
