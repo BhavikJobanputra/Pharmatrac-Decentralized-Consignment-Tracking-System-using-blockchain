@@ -2,13 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuIcon = document.querySelector(".menu-icon");
   const nav = document.querySelector("nav");
   const overlay = document.querySelector(".overlay");
+  const confirmButton = document.getElementById("confirmButton");
+
+  if (confirmButton) {
+    confirmButton.addEventListener("click", updateProgressBar);
+  }
 
   menuIcon.addEventListener("click", () => {
-      nav.classList.toggle("open");
+    nav.classList.toggle("open");
   });
 
   overlay.addEventListener("click", () => {
-      nav.classList.remove("open");
+    nav.classList.remove("open");
   });
 });
 
@@ -31,9 +36,12 @@ function closeItemPopup() {
 }
 
 // Show and hide progress update popup
-function openPopupForm() {
+function openPopupForm(customerName) {
   document.getElementById("popupForm").style.display = "block";
   document.getElementById("overlay").style.display = "block";
+  
+  // Store the customer name for use in updateProgressBar
+  document.getElementById("popupForm").dataset.customerName = customerName;
 }
 
 function closePopupForm() {
@@ -84,7 +92,7 @@ function addItem(event) {
   progressBar.innerHTML = `
       <h3>${customerName}</h3>
       <div class="progress" id="progress-${customerName.replace(/\s/g, "-")}"></div>
-      <button class="update-btn" onclick='openPopupForm()'>Update Progress</button>
+      <button class="update-btn" onclick='openPopupForm("${customerName}")'>Update Progress</button>
   `;
   progressBarContainer.appendChild(progressBar);
 }
@@ -105,10 +113,17 @@ function viewItemDetails(item) {
 
 // Function to update the progress bar
 function updateProgressBar() {
-  const customerName = document.getElementById("customerName").value;
+  const customerName = document.getElementById("popupForm").dataset.customerName;
   const progressBar = document.getElementById(`progress-${customerName.replace(/\s/g, "-")}`);
-
-  // You can add your logic here to calculate the new width based on the progress
-  progressBar.style.width = "50%"; // Example: Set to 50%
+  
+  // Get the selected progress value from radio buttons
+  const selectedStatus = document.querySelector('input[name="status"]:checked');
+  if (selectedStatus) {
+    const progressValue = selectedStatus.value;
+    progressBar.style.width = `${progressValue}%`;
+  } else {
+    alert("Please select a status.");
+  }
+  
   closePopupForm();
 }

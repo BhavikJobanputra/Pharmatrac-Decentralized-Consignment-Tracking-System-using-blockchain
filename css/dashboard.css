@@ -303,7 +303,7 @@ h1 {
     content: '';
     display: block;
     height: 20px;
-    width: 0;
+    width: 0; /* Initial width */
     background: #4070f4;
     transition: width 0.3s ease;
 }
