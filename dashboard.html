@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
+
+
     <!-- CSS -->
-    <link rel="stylesheet" href="sample.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
     <!-- Boxicons CSS -->
     <link
         href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
@@ -18,12 +20,12 @@
 <nav>
     <div class="logo">
         <i class="bx bx-menu menu-icon"></i>
-        <span class="logo-name">Dashboard</span>
+        <span class="logo-name">Pharmatrac</span>
     </div>
     <div class="sidebar">
         <div class="logo">
             <i class="bx bx-menu menu-icon"></i>
-            <span class="logo-name">Medi-Track</span>
+            <span class="logo-name">Pharmatrac</span>
         </div>
         <div class="sidebar-content">
             <ul class="lists">
@@ -39,24 +41,7 @@
                         <span class="link">Dashboard</span>
                     </a>
                 </li>
-                <li class="list">
-                    <a href="status.html" class="nav-link">
-                        <i class="bx bx-bell icon"></i>
-                        <span class="link">Status</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="statistics.html" class="nav-link">
-                        <i class="bx bx-pie-chart-alt-2 icon"></i>
-                        <span class="link">Statistics</span>
-                    </a>
-                </li>
-                <li class="list">
-                    <a href="complaints.html" class="nav-link">
-                        <i class="bx bx-message-rounded icon"></i>
-                        <span class="link">Complaints</span>
-                    </a>
-                </li>
+                
 
                 <li class="list">
                     <a href="index.html" class="nav-link">
@@ -117,9 +102,8 @@
 <div class="Main">
     <div class="progress-bar-container" id="progressBarContainer">
         <div class="header">
-            <div class="container">
-                <h1>Progress Bars</h1>
-            </div>
+            <h1>Progress Bars</h1>
+            <p>Only appears when there is data in List of shipments</p>
         </div>
     </div>
 </div>
@@ -139,6 +123,9 @@
     <button class="confirm-button" id="confirmButton">Confirm</button>
 </div>
 
-<script src="sample.js"></script>
+<script src="/js/dashboard.js"></script>
+<script src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js" type="application/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.8.1/dist/web3.min.js"></script>
+<script src="js/contract.js" type="application/javascript"></script>
 </body>
 </html>
