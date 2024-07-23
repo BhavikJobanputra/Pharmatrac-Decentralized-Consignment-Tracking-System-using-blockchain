@@ -81,7 +81,7 @@ nav a:hover {
 .buttons {
     display: flex;
     gap: 20px;
-    margin-left: 20px; /* Adjust this value as needed */
+    margin-left: 20px; 
 }
 
 .btn {
@@ -97,21 +97,19 @@ nav a:hover {
 .btn:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #005299; /* Change to your desired hover color */
-    color: #FFFFFF; /* Ensure text remains white */
+    background-color: #005299;
+    color: #FFFFFF; 
 }
 
 .hero-image {
-    text-align: center; /* Center the image */
-    margin: 20px 0; /* Add some margin for spacing */
+    text-align: center; 
+    margin: 20px 0; 
 }
 
 .hero-image img {
-    max-width: 100%; /* Ensure the image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    width: 20px; /* Adjust the width as needed */
-    /* Optional: Add a max-height to ensure it doesn't become too tall */
-     /* Adjust the max-height as needed */
+    max-width: 100%; 
+    height: auto; 
+    width: 20px; 
 }
 
 

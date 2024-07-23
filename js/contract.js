@@ -4,11 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function initContractInteraction() {
     if (window.ethereum) {
-        // Initialize Web3 with the Web3 library
         const web3 = new Web3(window.ethereum);
         await window.ethereum.request({ method: 'eth_requestAccounts' });
 
-        const contractAddress = "0x7d04AF83D3f3A90f1E2eF43ea166D1adbb2Af8dd"; // Replace with your contract address
+        const contractAddress = "0x7d04AF83D3f3A90f1E2eF43ea166D1adbb2Af8dd"; 
         const contractABI = [
             {
                 "inputs": [
@@ -249,14 +248,13 @@ async function initContractInteraction() {
 
         const contract = new web3.eth.Contract(contractABI, contractAddress);
 
-        window.contract = contract; // Expose contract to other scripts
-        window.web3 = web3; // Expose web3 to other scripts
+        window.contract = contract; 
+        window.web3 = web3; 
     } else {
         alert("Please install MetaMask!");
     }
 }
 
-// Add item functionality
 window.addItem = async function(event) {
     event.preventDefault();
     const customerName = document.getElementById("customerName").value;
@@ -279,7 +277,6 @@ window.addItem = async function(event) {
         const itemId = (await window.contract.methods.itemCount().call()).toNumber();
         const item = await window.contract.methods.getItem(itemId).call();
 
-        // Display the added item
         const mainDisplay = document.getElementById("mainDisplay");
         const div = document.createElement("div");
         div.classList.add("item");
@@ -294,7 +291,6 @@ window.addItem = async function(event) {
         `;
         mainDisplay.appendChild(div);
 
-        // Create a new progress bar for the added item
         const progressBarContainer = document.getElementById("progressBarContainer");
         const progressBar = document.createElement("div");
         progressBar.classList.add("progress-bar");
@@ -308,11 +304,10 @@ window.addItem = async function(event) {
         closeForm();
     } catch (error) {
         console.error("Error adding item:", error.message || error);
-        alert("Failed to add item. Check console for details.");
+        alert("Failed due to Browser/Wallet error.");
     }
 };
 
-// Update progress functionality
 window.updateProgressBar = async function() {
     const itemId = document.getElementById("popupForm").dataset.itemId;
     const selectedStatus = document.querySelector('input[name="status"]:checked');
@@ -322,9 +317,8 @@ window.updateProgressBar = async function() {
         try {
             const accounts = await window.web3.eth.getAccounts();
             const tx = await window.contract.methods.updateProgress(itemId, progressValue)
-                .send({ from: accounts[0], gas: 3000000 }); // Added gas limit
+                .send({ from: accounts[0], gas: 3000000 }); 
 
-            // Update the progress bar in the UI
             const progressBar = document.getElementById(`progress-${itemId}`);
             progressBar.style.width = `${progressValue}%`;
 
@@ -338,7 +332,6 @@ window.updateProgressBar = async function() {
     }
 };
 
-// View item details
 window.viewItemDetails = async function(itemId) {
     try {
         const item = await window.contract.methods.getItem(itemId).call();
