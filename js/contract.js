@@ -272,7 +272,7 @@ window.addItem = async function(event) {
     try {
         const accounts = await window.web3.eth.getAccounts();
         const tx = await window.contract.methods.addItem(customerName, startAddress, deliveryAddress, fragile, payment, receivedDate)
-            .send({ from: accounts[0], gas: 3000000 });
+            .send({ from: accounts[0], gas: 300000 });
 
         const itemId = (await window.contract.methods.itemCount().call()).toNumber();
         const item = await window.contract.methods.getItem(itemId).call();
