@@ -7,6 +7,9 @@ Pharmatrac is a simple yet effective system for tracking pharmaceutical products
 - **Real-Time Tracking:** Monitor shipments from pickup to delivery.
 - **Anti-Counterfeiting Measures:** Prevent fake products from being swapped with genuine ones during transit.
 - **User-Friendly Dashboard:** Easy-to-use interface for managing shipments.
+![Screenshot 2024-07-23 181143](https://github.com/user-attachments/assets/912c49b7-78be-4b01-9326-9a5af38e3321)
+![Screenshot 2024-07-23 205257](https://github.com/user-attachments/assets/259e626f-0377-44e8-b821-b7b03076d324)
+
 
 ## Challenges We Faced
 
