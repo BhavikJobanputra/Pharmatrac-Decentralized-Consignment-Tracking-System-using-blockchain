@@ -14,17 +14,17 @@ Planning the front end was challenging. While integrating blockchain in a React 
 
 ## Team
 
-### Dhruvil Patel - Project Manager
+### Dhruvil Patel 
 Dhruvil is a student at Adani University and manages the project. He coordinates the team and ensures we meet our goals.
 
 [LinkedIn Profile](https://www.linkedin.com/in/dhruvil-patel-0a6b47282/)
 
-### Bhavik Jobanputra - Frontend Developer
+### Bhavik Jobanputra 
 Bhavik, a student at LDRP College, creates user-friendly interfaces using HTML, CSS, and JavaScript.
 
 [LinkedIn Profile](https://www.linkedin.com/in/bhavik-jobanputra-505563289/)
 
-### Vedant Bhayani - Backend Developer
+### Vedant Bhayani 
 Vedant is a student at IAR College and works on the server-side logic, making sure everything runs smoothly and securely.
 
 [LinkedIn Profile](https://www.linkedin.com/in/vedant-bhayani-391122283/)
