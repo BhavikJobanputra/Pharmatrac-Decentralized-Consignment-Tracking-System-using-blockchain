@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Show and hide form popup
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
@@ -26,7 +25,6 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-// Show and hide item detail popup
 function openItemPopup() {
   document.getElementById("itemPopup").style.display = "block";
 }
@@ -35,12 +33,10 @@ function closeItemPopup() {
   document.getElementById("itemPopup").style.display = "none";
 }
 
-// Show and hide progress update popup
 function openPopupForm(customerName) {
   document.getElementById("popupForm").style.display = "block";
   document.getElementById("overlay").style.display = "block";
   
-  // Store the customer name for use in updateProgressBar
   document.getElementById("popupForm").dataset.customerName = customerName;
 }
 
@@ -49,7 +45,6 @@ function closePopupForm() {
   document.getElementById("overlay").style.display = "none";
 }
 
-// Function to add item
 function addItem(event) {
   event.preventDefault();
 
@@ -85,7 +80,6 @@ function addItem(event) {
 
   closeForm();
 
-  // Create a new progress bar for the added item
   const progressBarContainer = document.getElementById("progressBarContainer");
   const progressBar = document.createElement("div");
   progressBar.classList.add("progress-bar");
@@ -97,7 +91,6 @@ function addItem(event) {
   progressBarContainer.appendChild(progressBar);
 }
 
-// Function to view item details
 function viewItemDetails(item) {
   const itemDetailsContent = document.getElementById("itemDetailsContent");
   itemDetailsContent.innerHTML = `
@@ -111,12 +104,10 @@ function viewItemDetails(item) {
   openItemPopup();
 }
 
-// Function to update the progress bar
 function updateProgressBar() {
   const customerName = document.getElementById("popupForm").dataset.customerName;
   const progressBar = document.getElementById(`progress-${customerName.replace(/\s/g, "-")}`);
   
-  // Get the selected progress value from radio buttons
   const selectedStatus = document.querySelector('input[name="status"]:checked');
   if (selectedStatus) {
     const progressValue = selectedStatus.value;
